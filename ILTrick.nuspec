@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>ILTrick</id>
+        <version>0.4-apex</version>
+        <authors>AwfulWare</authors>
+        <projectUrl>https://github.com/AwfulWare/ILTricks</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>-</description>
+        <dependencies>
+            <dependency id="ILTricks" version="[0.4-apex]" />
+        </dependencies>
+    </metadata>
+    <files />
+</package>

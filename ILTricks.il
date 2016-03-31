@@ -19,7 +19,7 @@
   }
 }
 
-.class public abstract auto ansi sealed ILTricks.ClassUtility`1<class T> extends [mscorlib]System.Object
+.class public abstract auto ansi sealed ClassUtility`1<class T> extends [mscorlib]System.Object
 {
   .field private static bool cctorRun
   
@@ -34,12 +34,12 @@
     .maxstack 8
     
     volatile. 
-    ldsfld bool class ILTricks.ClassUtility`1<!T>::cctorRun
+    ldsfld bool class ClassUtility`1<!T>::cctorRun
     brtrue.s L_ret
     
     ldc.i4.1 
     volatile. 
-    stsfld bool class ILTricks.ClassUtility`1<!T>::cctorRun
+    stsfld bool class ClassUtility`1<!T>::cctorRun
     
     ldtoken !T
     call void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::RunClassConstructor(valuetype [mscorlib]System.RuntimeTypeHandle)
@@ -49,7 +49,7 @@
   }
 }
 
- .class public abstract auto ansi sealed ILTricks.AtomicVolatileAccessor`1<T> extends System.Object
+ .class public abstract auto ansi sealed AtomicVolatileAccessor`1<T> extends System.Object
 {
   .field private static bool smUseInterlockedFor64bit
 
@@ -113,7 +113,7 @@
     // here is where it sets smUseInterlockedFor64bit
     L_interlocked_64:
     ldc.i4.1
-    stsfld bool class ILTricks.AtomicVolatileAccessor`1<!T>::smUseInterlockedFor64bit
+    stsfld bool class AtomicVolatileAccessor`1<!T>::smUseInterlockedFor64bit
 
     // not 64 bits, check if primitive
     L_native:
@@ -135,10 +135,10 @@
   {
     ldarg.0
 
-    ldsfld bool class ILTricks.AtomicVolatileAccessor`1<!T>::smUseInterlockedFor64bit
+    ldsfld bool class AtomicVolatileAccessor`1<!T>::smUseInterlockedFor64bit
     brtrue.s L_interlocked_64
 
-    call !!0 ILTricks.Memory::VolatileReadNonAtomic<!T>(!!0&)
+    call !!0 Memory::VolatileReadNonAtomic<!T>(!!0&)
     ret
 
     L_interlocked_64:
@@ -155,10 +155,10 @@
     ldarg.0
     ldarg.1
 
-    ldsfld bool class ILTricks.AtomicVolatileAccessor`1<!T>::smUseInterlockedFor64bit
+    ldsfld bool class AtomicVolatileAccessor`1<!T>::smUseInterlockedFor64bit
     brtrue.s L_interlocked_64
 
-    call !!0 ILTricks.Memory::VolatileWriteNonAtomic<!T>(!!0&, !!0)
+    call !!0 Memory::VolatileWriteNonAtomic<!T>(!!0&, !!0)
     ret
 
     L_interlocked_64:
@@ -172,7 +172,7 @@
   }
 }
 
-.class public abstract auto ansi sealed beforefieldinit ILTricks.FlagTypeExtensions extends System.Object
+.class public abstract auto ansi sealed beforefieldinit FlagTypeExtensions extends System.Object
 {
   .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -194,7 +194,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<!!T>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<!!T>(!!0, !!0)
     ret
   }
 
@@ -204,7 +204,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<uint8>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<uint8>(!!0, !!0)
     ret
   }
   .method public hidebysig static bool HasFlag(int8 'value', int8 'flag') cil managed aggressiveinlining
@@ -213,7 +213,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<int8>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<int8>(!!0, !!0)
     ret
   }
 
@@ -223,7 +223,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<int16>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<int16>(!!0, !!0)
     ret
   }
   .method public hidebysig static bool HasFlag(uint16 'value', uint16 'flag') cil managed aggressiveinlining
@@ -232,7 +232,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<uint16>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<uint16>(!!0, !!0)
     ret
   }
 
@@ -242,7 +242,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<int32>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<int32>(!!0, !!0)
     ret
   }
   .method public hidebysig static bool HasFlag(uint32 'value', uint32 'flag') cil managed aggressiveinlining
@@ -251,7 +251,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<uint32>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<uint32>(!!0, !!0)
     ret
   }
 
@@ -261,7 +261,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<int64>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<int64>(!!0, !!0)
     ret
   }
   .method public hidebysig static bool HasFlag(uint64 'value', uint64 'flag') cil managed aggressiveinlining
@@ -270,7 +270,7 @@
 
     ldarg.0
     ldarg.1
-    call bool ILTricks.FlagTypeExtensions::HasFlagUnchecked<uint64>(!!0, !!0)
+    call bool FlagTypeExtensions::HasFlagUnchecked<uint64>(!!0, !!0)
     ret
   }
 
@@ -317,7 +317,7 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<!!T>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<!!T>(!!0, !!0)
     ret
   }
 
@@ -327,7 +327,7 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<uint8>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint8>(!!0, !!0)
     ret
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int8 'value', int8 'flag') cil managed
@@ -336,7 +336,7 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<int8>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int8>(!!0, !!0)
     ret
   }
 
@@ -346,7 +346,7 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<int16>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int16>(!!0, !!0)
     ret
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint16 'value', uint16 'flag') cil managed
@@ -355,7 +355,7 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<uint16>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint16>(!!0, !!0)
     ret
   }
 
@@ -365,7 +365,7 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<int32>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int32>(!!0, !!0)
     ret
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint32 'value', uint32 'flag') cil managed
@@ -374,7 +374,7 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<uint32>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint32>(!!0, !!0)
     ret
   }
 
@@ -384,7 +384,7 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<int64>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int64>(!!0, !!0)
     ret
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint64 'value', uint64 'flag') cil managed
@@ -393,24 +393,24 @@
 
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> ILTricks.FlagTypeExtensions::TestFlagUnchecked<uint64>(!!0, !!0)
+    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint64>(!!0, !!0)
     ret
   }
 }
 
-.class public abstract auto ansi sealed beforefieldinit ILTricks.Memory extends System.Object
+.class public abstract auto ansi sealed beforefieldinit Memory extends System.Object
 {
   .method public hidebysig static !!T VolatileReadAtomic<T>(!!T& 'address') cil managed
   {
     ldarg.0
-    call !0 class ILTricks.AtomicVolatileAccessor`1<!!T>::Read(!0&)
+    call !0 class AtomicVolatileAccessor`1<!!T>::Read(!0&)
     ret
   }
   .method public hidebysig static !!T VolatileWriteAtomic<T>([out] !!T& 'address', !!T 'value') cil managed
   {
     ldarg.0
     ldarg.1
-    call !0 class ILTricks.AtomicVolatileAccessor`1<!!T>::Write(!0&, !0)
+    call !0 class AtomicVolatileAccessor`1<!!T>::Write(!0&, !0)
     ret
   }
 
@@ -570,28 +570,28 @@
   .method public hidebysig static int64 VolatileRead(int64& 'address') cil managed noinlining
   {
     ldarg.0
-    call !!0 ILTricks.Memory::VolatileReadAtomic<int64>(!!0&)
+    call !!0 Memory::VolatileReadAtomic<int64>(!!0&)
     ret
   }
   .method public hidebysig static int64 VolatileWrite([out] int64& 'address', int64 'value') cil managed noinlining
   {
     ldarg.0
     ldarg.1
-    call !!0 ILTricks.Memory::VolatileWriteAtomic<int64>(!!0&, !!0)
+    call !!0 Memory::VolatileWriteAtomic<int64>(!!0&, !!0)
     ret
   }
 
   .method public hidebysig static uint64 VolatileRead(uint64& 'address') cil managed noinlining
   {
     ldarg.0
-    call !!0 ILTricks.Memory::VolatileReadAtomic<uint64>(!!0&)
+    call !!0 Memory::VolatileReadAtomic<uint64>(!!0&)
     ret
   }
   .method public hidebysig static uint64 VolatileWrite([out] uint64& 'address', uint64 'value') cil managed noinlining
   {
     ldarg.0
     ldarg.1
-    call !!0 ILTricks.Memory::VolatileWriteAtomic<uint64>(!!0&, !!0)
+    call !!0 Memory::VolatileWriteAtomic<uint64>(!!0&, !!0)
     ret
   }
 
@@ -615,14 +615,14 @@
   .method public hidebysig static float64 VolatileRead(float64& 'address') cil managed noinlining
   {
     ldarg.0
-    call !!0 ILTricks.Memory::VolatileReadAtomic<float64>(!!0&)
+    call !!0 Memory::VolatileReadAtomic<float64>(!!0&)
     ret
   }
   .method public hidebysig static float64 VolatileWrite([out] float64& 'address', float64 'value') cil managed noinlining
   {
     ldarg.0
     ldarg.1
-    call !!0 ILTricks.Memory::VolatileWriteAtomic<float64>(!!0&, !!0)
+    call !!0 Memory::VolatileWriteAtomic<float64>(!!0&, !!0)
     ret
   }
 
@@ -663,14 +663,14 @@
   .method public hidebysig static !!T VolatileRead<class T>(!!T& 'address') cil managed
   {
     ldarg.0
-    call !!0 ILTricks.Memory::VolatileReadNonAtomic<!!T>(!!0&)
+    call !!0 Memory::VolatileReadNonAtomic<!!T>(!!0&)
     ret
   }
   .method public hidebysig static !!T VolatileWrite<class T>([out] !!T& 'address', !!T 'value') cil managed
   {
     ldarg.0
     ldarg.1
-    call !!0 ILTricks.Memory::VolatileWriteNonAtomic<!!T>(!!0&, !!0)
+    call !!0 Memory::VolatileWriteNonAtomic<!!T>(!!0&, !!0)
     ret
   }
 
