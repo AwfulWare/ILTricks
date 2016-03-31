@@ -2,7 +2,7 @@
   .hash algorithm 0x00008004
   .ver 0:4:1:0
 
-  .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+  .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 }
 
 .class public abstract auto ansi sealed ClassUtility`1<class T> extends [mscorlib]System.Object
@@ -160,11 +160,11 @@
 
 .class public abstract auto ansi sealed beforefieldinit FlagTypeExtensions extends System.Object
 {
-  .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+  .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
-  .method private hidebysig static bool HasFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
+  .method private hidebysig static bool HasFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed 
   {
-    //.custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    //.custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -174,9 +174,9 @@
     ret
   }
 
-  .method public hidebysig static bool Has<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool Has<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -184,18 +184,18 @@
     ret
   }
 
-  .method public hidebysig static bool HasFlag(uint8 'value', uint8 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool HasFlag(uint8 'value', uint8 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
     call bool FlagTypeExtensions::HasFlagUnchecked<uint8>(!!0, !!0)
     ret
   }
-  .method public hidebysig static bool HasFlag(int8 'value', int8 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool HasFlag(int8 'value', int8 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -203,18 +203,18 @@
     ret
   }
 
-  .method public hidebysig static bool HasFlag(int16 'value', int16 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool HasFlag(int16 'value', int16 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
     call bool FlagTypeExtensions::HasFlagUnchecked<int16>(!!0, !!0)
     ret
   }
-  .method public hidebysig static bool HasFlag(uint16 'value', uint16 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool HasFlag(uint16 'value', uint16 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -222,18 +222,18 @@
     ret
   }
 
-  .method public hidebysig static bool HasFlag(int32 'value', int32 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool HasFlag(int32 'value', int32 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
     call bool FlagTypeExtensions::HasFlagUnchecked<int32>(!!0, !!0)
     ret
   }
-  .method public hidebysig static bool HasFlag(uint32 'value', uint32 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool HasFlag(uint32 'value', uint32 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -241,18 +241,18 @@
     ret
   }
 
-  .method public hidebysig static bool HasFlag(int64 'value', int64 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool HasFlag(int64 'value', int64 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
     call bool FlagTypeExtensions::HasFlagUnchecked<int64>(!!0, !!0)
     ret
   }
-  .method public hidebysig static bool HasFlag(uint64 'value', uint64 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool HasFlag(uint64 'value', uint64 'flag') cil managed 
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -260,9 +260,9 @@
     ret
   }
 
-  .method private hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
+  .method private hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed 
   {
-    //.custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    //.custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     .locals init (!!T, valuetype [mscorlib]System.Nullable`1<bool>)
 
@@ -299,7 +299,7 @@
 
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -309,7 +309,7 @@
 
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint8 'value', uint8 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -318,7 +318,7 @@
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int8 'value', int8 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -328,7 +328,7 @@
 
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int16 'value', int16 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -337,7 +337,7 @@
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint16 'value', uint16 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -347,7 +347,7 @@
 
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int32 'value', int32 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -356,7 +356,7 @@
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint32 'value', uint32 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -366,7 +366,7 @@
 
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int64 'value', int64 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -375,7 +375,7 @@
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint64 'value', uint64 'flag') cil managed
   {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -660,13 +660,13 @@
     ret
   }
 
-  .method public hidebysig static !!T NormalRead<T>(!!T& 'address') cil managed aggressiveinlining
+  .method public hidebysig static !!T NormalRead<T>(!!T& 'address') cil managed 
   {
     ldarg.0
     ldobj !!T
     ret
   }
-  .method public hidebysig static !!T NormalWrite<T>([out] !!T& 'address', !!T 'value') cil managed aggressiveinlining
+  .method public hidebysig static !!T NormalWrite<T>([out] !!T& 'address', !!T 'value') cil managed 
   {
     ldarg.0
     ldarg.1

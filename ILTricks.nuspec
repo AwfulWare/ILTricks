@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>ILTricks</id>
-    <version>0.4</version>
+    <version>0.4.1</version>
     <authors>AwfulWare</authors>
     <projectUrl>https://github.com/AwfulWare/ILTricks</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,6 +10,7 @@
   </metadata>
   <files>
     <file src="Release\Net20\ILTricks.dll" target="lib\net20\ILTricks.dll" />
+    <file src="Release\Net35\ILTricks.dll" target="lib\net35\ILTricks.dll" />
     <file src="Release\Portable\ILTricks.dll" target="lib\net40-client\ILTricks.dll" />
     <file src="Release\Net45\ILTricks.dll" target="lib\net45\ILTricks.dll" />
     <file src="Release\Portable\ILTricks.dll" target="lib\portable-net4+sl5+uap+win8+wp8+wpa+dnxcore\ILTricks.dll" />
