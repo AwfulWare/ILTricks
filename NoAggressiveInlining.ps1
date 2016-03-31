@@ -1,0 +1,1 @@
+sc "ILTricks.NoAggressiveInlining.il" (gc "ILTricks.il").Replace("aggressiveinlining", "")
