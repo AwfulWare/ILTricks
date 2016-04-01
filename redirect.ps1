@@ -14,8 +14,4 @@ $xs = New-Object System.Xml.XmlWriterSettings
 $xs.Indent = $true
 $xs.IndentChars = '  '
 $xw = [System.Xml.XmlWriter]::Create($dest, $xs)
-try{
-  $x.Save($xw)
-}finally{
-  $xw.Dispose();
-}
+$x.Save($xw)
