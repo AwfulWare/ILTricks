@@ -1,6 +1,6 @@
 .assembly ILTricks {
   .hash algorithm 0x00008004
-  .ver 0:4:1:0
+  .ver 0:4:2:0
 
   .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 }
@@ -260,7 +260,7 @@
     ret
   }
 
-  .method private hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
+  .method private hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed
   {
     //.custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -297,7 +297,7 @@
     ret
   }
 
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -307,7 +307,7 @@
     ret
   }
 
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint8 'value', uint8 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint8 'value', uint8 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -316,7 +316,7 @@
     call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint8>(!!0, !!0)
     ret
   }
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int8 'value', int8 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int8 'value', int8 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -326,7 +326,7 @@
     ret
   }
 
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int16 'value', int16 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int16 'value', int16 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -335,7 +335,7 @@
     call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int16>(!!0, !!0)
     ret
   }
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint16 'value', uint16 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint16 'value', uint16 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -345,7 +345,7 @@
     ret
   }
 
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int32 'value', int32 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int32 'value', int32 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -354,7 +354,7 @@
     call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int32>(!!0, !!0)
     ret
   }
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint32 'value', uint32 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint32 'value', uint32 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -364,7 +364,7 @@
     ret
   }
 
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int64 'value', int64 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int64 'value', int64 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -373,7 +373,7 @@
     call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int64>(!!0, !!0)
     ret
   }
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint64 'value', uint64 'flag') cil managed
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint64 'value', uint64 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
@@ -386,13 +386,13 @@
 
 .class public abstract auto ansi sealed beforefieldinit Memory extends System.Object
 {
-  .method public hidebysig static !!T VolatileReadAtomic<T>(!!T& 'address') cil managed
+  .method public hidebysig static !!T VolatileReadAtomic<T>(!!T& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     call !0 class AtomicVolatileAccessor`1<!!T>::Read(!0&)
     ret
   }
-  .method public hidebysig static !!T VolatileWriteAtomic<T>([out] !!T& 'address', !!T 'value') cil managed
+  .method public hidebysig static !!T VolatileWriteAtomic<T>([out] !!T& 'address', !!T 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -400,14 +400,14 @@
     ret
   }
 
-  .method public hidebysig static !!T VolatileReadNonAtomic<T>(!!T& 'address') cil managed noinlining
+  .method public hidebysig static !!T VolatileReadNonAtomic<T>(!!T& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldobj !!T
     ret
   }
-  .method public hidebysig static !!T VolatileWriteNonAtomic<T>([out] !!T& 'address', !!T 'value') cil managed noinlining
+  .method public hidebysig static !!T VolatileWriteNonAtomic<T>([out] !!T& 'address', !!T 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -417,14 +417,14 @@
     ret
   }
 
-  .method public hidebysig static bool VolatileRead(bool& 'address') cil managed noinlining
+  .method public hidebysig static bool VolatileRead(bool& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.i1
     ret
   }
-  .method public hidebysig static bool VolatileWrite([out] bool& 'address', bool 'value') cil managed noinlining
+  .method public hidebysig static bool VolatileWrite([out] bool& 'address', bool 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -434,14 +434,14 @@
     ret
   }
 
-  .method public hidebysig static uint8 VolatileRead(uint8& 'address') cil managed noinlining
+  .method public hidebysig static uint8 VolatileRead(uint8& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.u1
     ret
   }
-  .method public hidebysig static uint8 VolatileWrite([out] uint8& 'address', uint8 'value') cil managed noinlining
+  .method public hidebysig static uint8 VolatileWrite([out] uint8& 'address', uint8 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -451,14 +451,14 @@
     ret
   }
 
-  .method public hidebysig static int8 VolatileRead(int8& 'address') cil managed noinlining
+  .method public hidebysig static int8 VolatileRead(int8& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.i1
     ret
   }
-  .method public hidebysig static int8 VolatileWrite([out] int8& 'address', int8 'value') cil managed noinlining
+  .method public hidebysig static int8 VolatileWrite([out] int8& 'address', int8 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -468,14 +468,14 @@
     ret
   }
 
-  .method public hidebysig static char VolatileRead(char& 'address') cil managed noinlining
+  .method public hidebysig static char VolatileRead(char& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.u2
     ret
   }
-  .method public hidebysig static char VolatileWrite([out] char& 'address', char 'value') cil managed noinlining
+  .method public hidebysig static char VolatileWrite([out] char& 'address', char 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -485,14 +485,14 @@
     ret
   }
 
-  .method public hidebysig static int16 VolatileRead(int16& 'address') cil managed noinlining
+  .method public hidebysig static int16 VolatileRead(int16& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.i2
     ret
   }
-  .method public hidebysig static int16 VolatileWrite([out] int16& 'address', int16 'value') cil managed noinlining
+  .method public hidebysig static int16 VolatileWrite([out] int16& 'address', int16 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -502,14 +502,14 @@
     ret
   }
 
-  .method public hidebysig static uint16 VolatileRead(uint16& 'address') cil managed noinlining
+  .method public hidebysig static uint16 VolatileRead(uint16& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.u2
     ret
   }
-  .method public hidebysig static uint16 VolatileWrite([out] uint16& 'address', uint16 'value') cil managed noinlining
+  .method public hidebysig static uint16 VolatileWrite([out] uint16& 'address', uint16 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -519,14 +519,14 @@
     ret
   }
 
-  .method public hidebysig static int32 VolatileRead(int32& 'address') cil managed noinlining
+  .method public hidebysig static int32 VolatileRead(int32& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.i4
     ret
   }
-  .method public hidebysig static int32 VolatileWrite([out] int32& 'address', int32 'value') cil managed noinlining
+  .method public hidebysig static int32 VolatileWrite([out] int32& 'address', int32 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -536,14 +536,14 @@
     ret
   }
 
-  .method public hidebysig static uint32 VolatileRead(uint32& 'address') cil managed noinlining
+  .method public hidebysig static uint32 VolatileRead(uint32& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.u4
     ret
   }
-  .method public hidebysig static uint32 VolatileWrite([out] uint32& 'address', uint32 'value') cil managed noinlining
+  .method public hidebysig static uint32 VolatileWrite([out] uint32& 'address', uint32 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -553,13 +553,13 @@
     ret
   }
 
-  .method public hidebysig static int64 VolatileRead(int64& 'address') cil managed noinlining
+  .method public hidebysig static int64 VolatileRead(int64& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     call !!0 Memory::VolatileReadAtomic<int64>(!!0&)
     ret
   }
-  .method public hidebysig static int64 VolatileWrite([out] int64& 'address', int64 'value') cil managed noinlining
+  .method public hidebysig static int64 VolatileWrite([out] int64& 'address', int64 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -567,13 +567,13 @@
     ret
   }
 
-  .method public hidebysig static uint64 VolatileRead(uint64& 'address') cil managed noinlining
+  .method public hidebysig static uint64 VolatileRead(uint64& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     call !!0 Memory::VolatileReadAtomic<uint64>(!!0&)
     ret
   }
-  .method public hidebysig static uint64 VolatileWrite([out] uint64& 'address', uint64 'value') cil managed noinlining
+  .method public hidebysig static uint64 VolatileWrite([out] uint64& 'address', uint64 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -581,14 +581,14 @@
     ret
   }
 
-  .method public hidebysig static float32 VolatileRead(float32& 'address') cil managed noinlining
+  .method public hidebysig static float32 VolatileRead(float32& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldind.r4
     ret
   }
-  .method public hidebysig static float32 VolatileWrite([out] float32& 'address', float32 'value') cil managed noinlining
+  .method public hidebysig static float32 VolatileWrite([out] float32& 'address', float32 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -598,13 +598,13 @@
     ret
   }
 
-  .method public hidebysig static float64 VolatileRead(float64& 'address') cil managed noinlining
+  .method public hidebysig static float64 VolatileRead(float64& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     call !!0 Memory::VolatileReadAtomic<float64>(!!0&)
     ret
   }
-  .method public hidebysig static float64 VolatileWrite([out] float64& 'address', float64 'value') cil managed noinlining
+  .method public hidebysig static float64 VolatileWrite([out] float64& 'address', float64 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -612,14 +612,14 @@
     ret
   }
 
-  .method public hidebysig static native int VolatileRead(native int& 'address') cil managed noinlining
+  .method public hidebysig static native int VolatileRead(native int& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldobj native int
     ret
   }
-  .method public hidebysig static native int VolatileWrite([out] native int& 'address', native int 'value') cil managed noinlining
+  .method public hidebysig static native int VolatileWrite([out] native int& 'address', native int 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -629,14 +629,14 @@
     ret
   }
 
-  .method public hidebysig static native uint VolatileRead(native uint& 'address') cil managed noinlining
+  .method public hidebysig static native uint VolatileRead(native uint& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     volatile.
     ldobj native uint
     ret
   }
-  .method public hidebysig static native uint VolatileWrite([out] native uint& 'address', native uint 'value') cil managed noinlining
+  .method public hidebysig static native uint VolatileWrite([out] native uint& 'address', native uint 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
@@ -646,13 +646,13 @@
     ret
   }
 
-  .method public hidebysig static !!T VolatileRead<class T>(!!T& 'address') cil managed
+  .method public hidebysig static !!T VolatileRead<class T>(!!T& 'address') cil managed aggressiveinlining
   {
     ldarg.0
     call !!0 Memory::VolatileReadNonAtomic<!!T>(!!0&)
     ret
   }
-  .method public hidebysig static !!T VolatileWrite<class T>([out] !!T& 'address', !!T 'value') cil managed
+  .method public hidebysig static !!T VolatileWrite<class T>([out] !!T& 'address', !!T 'value') cil managed aggressiveinlining
   {
     ldarg.0
     ldarg.1
