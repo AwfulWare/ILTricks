@@ -1,6 +1,6 @@
 .assembly ILTricks {
   .hash algorithm 0x00008004
-  .ver 0:4:2:0
+  .ver 0:4:3:0
 
   .custom instance void System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 }
