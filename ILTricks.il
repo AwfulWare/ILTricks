@@ -1,6 +1,6 @@
 .assembly ILTricks {
   .hash algorithm 0x00008004
-  .ver 0:4:3:3
+  .ver 0:4:3:4
 
   .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 }
@@ -263,44 +263,6 @@
     and
     ldarg.1
     ceq
-    ret
-  }
-
-  .method private hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed
-  {
-    //.custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
-
-    .locals init (!!T, valuetype [mscorlib]System.Nullable`1<bool>)
-
-    ldarg.0
-    ldarg.1
-    and
-    stloc.0
-    
-    ldloc.0
-    ldarg.1
-    ceq
-    brfalse.s L_False
-    ldc.i4.1
-    br.s L_Nullable
-    
-    L_False:
-    
-    ldloc.0
-    ldc.i4.0
-    box !!T
-    ceq
-    brfalse.s L_Null
-    ldc.i4.0
-    
-    L_Nullable:
-
-    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
-    ret
-
-    L_Null:
-
-    ldloc.1
     ret
   }
 
