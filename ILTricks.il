@@ -1,6 +1,6 @@
 .assembly ILTricks {
   .hash algorithm 0x00008004
-  .ver 0:4:3:0
+  .ver 0:4:3:3
 
   .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 }
@@ -162,9 +162,9 @@
 {
   .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
-  .method private hidebysig static bool HasFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
+  .method public hidebysig static bool Has<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
   {
-    //.custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
@@ -174,23 +174,15 @@
     ret
   }
 
-  .method public hidebysig static bool Has<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
-  {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
-
-    ldarg.0
-    ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<!!T>(!!0, !!0)
-    ret
-  }
-
   .method public hidebysig static bool HasFlag(uint8 'value', uint8 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     ldarg.0
     ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<uint8>(!!0, !!0)
+    and
+    ldarg.1
+    ceq
     ret
   }
   .method public hidebysig static bool HasFlag(int8 'value', int8 'flag') cil managed aggressiveinlining
@@ -199,7 +191,9 @@
 
     ldarg.0
     ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<int8>(!!0, !!0)
+    and
+    ldarg.1
+    ceq
     ret
   }
 
@@ -209,7 +203,9 @@
 
     ldarg.0
     ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<int16>(!!0, !!0)
+    and
+    ldarg.1
+    ceq
     ret
   }
   .method public hidebysig static bool HasFlag(uint16 'value', uint16 'flag') cil managed aggressiveinlining
@@ -218,7 +214,9 @@
 
     ldarg.0
     ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<uint16>(!!0, !!0)
+    and
+    ldarg.1
+    ceq
     ret
   }
 
@@ -228,7 +226,9 @@
 
     ldarg.0
     ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<int32>(!!0, !!0)
+    and
+    ldarg.1
+    ceq
     ret
   }
   .method public hidebysig static bool HasFlag(uint32 'value', uint32 'flag') cil managed aggressiveinlining
@@ -237,7 +237,9 @@
 
     ldarg.0
     ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<uint32>(!!0, !!0)
+    and
+    ldarg.1
+    ceq
     ret
   }
 
@@ -247,7 +249,9 @@
 
     ldarg.0
     ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<int64>(!!0, !!0)
+    and
+    ldarg.1
+    ceq
     ret
   }
   .method public hidebysig static bool HasFlag(uint64 'value', uint64 'flag') cil managed aggressiveinlining
@@ -256,13 +260,53 @@
 
     ldarg.0
     ldarg.1
-    call bool FlagTypeExtensions::HasFlagUnchecked<uint64>(!!0, !!0)
+    and
+    ldarg.1
+    ceq
     ret
   }
 
   .method private hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlagUnchecked<valuetype .ctor T>(!!T 'value', !!T 'flag') cil managed
   {
     //.custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
+
+    .locals init (!!T, valuetype [mscorlib]System.Nullable`1<bool>)
+
+    ldarg.0
+    ldarg.1
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    box !!T
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
+    ret
+  }
+
+  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
+  {
+    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
     .locals init (!!T, valuetype [mscorlib]System.Nullable`1<bool>)
 
@@ -297,32 +341,76 @@
     ret
   }
 
-  .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag<valuetype .ctor (System.Enum) T>(!!T 'value', !!T 'flag') cil managed aggressiveinlining
-  {
-    .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
-
-    ldarg.0
-    ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<!!T>(!!0, !!0)
-    ret
-  }
-
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint8 'value', uint8 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
+    .locals init (uint8, valuetype [mscorlib]System.Nullable`1<bool>)
+
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint8>(!!0, !!0)
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
     ret
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(int8 'value', int8 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
+    .locals init (int8, valuetype [mscorlib]System.Nullable`1<bool>)
+
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int8>(!!0, !!0)
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
     ret
   }
 
@@ -330,18 +418,72 @@
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
+    .locals init (int16, valuetype [mscorlib]System.Nullable`1<bool>)
+
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int16>(!!0, !!0)
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
     ret
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint16 'value', uint16 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
+    .locals init (uint16, valuetype [mscorlib]System.Nullable`1<bool>)
+
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint16>(!!0, !!0)
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
     ret
   }
 
@@ -349,18 +491,72 @@
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
+    .locals init (int32, valuetype [mscorlib]System.Nullable`1<bool>)
+
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int32>(!!0, !!0)
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
     ret
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint32 'value', uint32 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
+    .locals init (uint32, valuetype [mscorlib]System.Nullable`1<bool>)
+
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint32>(!!0, !!0)
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
     ret
   }
 
@@ -368,18 +564,72 @@
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
+    .locals init (int64, valuetype [mscorlib]System.Nullable`1<bool>)
+
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<int64>(!!0, !!0)
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
     ret
   }
   .method public hidebysig static valuetype [mscorlib]System.Nullable`1<bool> TestFlag(uint64 'value', uint64 'flag') cil managed aggressiveinlining
   {
     .custom instance void [System.Core]System.Runtime.CompilerServices.ExtensionAttribute::.ctor() = ( 01 00 00 00 )
 
+    .locals init (uint64, valuetype [mscorlib]System.Nullable`1<bool>)
+
     ldarg.0
     ldarg.1
-    call valuetype [mscorlib]System.Nullable`1<bool> FlagTypeExtensions::TestFlagUnchecked<uint64>(!!0, !!0)
+    and
+    stloc.0
+    
+    ldloc.0
+    ldarg.1
+    ceq
+    brfalse.s L_False
+    ldc.i4.1
+    br.s L_Nullable
+    
+    L_False:
+    
+    ldloc.0
+    ldc.i4.0
+    ceq
+    brfalse.s L_Null
+    ldc.i4.0
+    
+    L_Nullable:
+
+    newobj instance void valuetype [mscorlib]System.Nullable`1<bool>::.ctor(!0)
+    ret
+
+    L_Null:
+
+    ldloc.1
     ret
   }
 }
